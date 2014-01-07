@@ -358,7 +358,7 @@ public class ControllerOfTiles {
 		case 2: return new float[][] { //easy
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,scen,b___,b___,b___,b___},
-				{b___,b___,b___,scen,0.3f,b___,b___,b___,b___},
+				{b___,b___,b___,scen,0.3f,scen,b___,b___,b___},
 				{b___,b___,scen,0.3f,0.8f,scen,b___,b___,b___},
 				{b___,b___,scen,0.8f,1.0f,0.6f,scen,b___,b___},
 				{b___,b___,b___,scen,scen,scen,b___,b___,b___}};
