@@ -131,7 +131,7 @@ public class GameScreen implements Screen, InputProcessor {
 		
 		game.font.draw(game.batch, "Score: " + (int)game.g.score, 10, 470);
 		game.font.draw(game.batch, "Best: " + game.g.highScore, 10, 440);
-		if (game.debug) game.font.draw(game.batch, "DB: " + game.g.tiles.size() + " h:" + (int)game.g.height + " fps: " + (int)(1/game.g.lastDelta), 10, 410);
+		if (game.debug) game.font.draw(game.batch, "H:" + (int)game.g.height/1000 + " FPS: " + (int)(1/game.g.lastDelta), 10, 410);
 		
 		switch (state) {
 		case Running:

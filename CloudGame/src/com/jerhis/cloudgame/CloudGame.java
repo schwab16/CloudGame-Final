@@ -19,7 +19,7 @@ public class CloudGame {
 	float score; 
 	int highScore;
 	float bgOffSet = 0, bg1 = 0, bg2 = 0;
-	float totalTime, height, lastDelta = 1/60;
+	float totalTime, height, lastDelta = 1.0f/60;
 	boolean right, left;
 
 	ArrayList<Tile> tiles = new ArrayList<Tile>();
@@ -47,7 +47,7 @@ public class CloudGame {
 		controllerOfTiles.updateCollisions(delta, guy);
 		
 		int cloudsRemoved = controllerOfTiles.updateTiles(delta, height);
-		score += (cloudsRemoved)*(cloudsRemoved + 1) * 10; //combos are scored better
+		score += (cloudsRemoved)*(cloudsRemoved + 1) * 20; //combos are scored better
 		controllerOfTiles.spawn(totalTime, height);
 		
 		controllerOfTiles.updateGameObjects(delta);

@@ -13,7 +13,7 @@ public class MyGdxGame extends Game {
 	BitmapFont font;
 	Preferences prefs;
 	CloudGame g;
-	boolean debug = true;
+	boolean debug = false;
  
 	public void create() {
 		
