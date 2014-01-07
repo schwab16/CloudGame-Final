@@ -60,7 +60,7 @@ blue4
   index: -1
 clsc3
   rotate: false
-  xy: 517, 44
+  xy: 431, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
@@ -116,14 +116,14 @@ blackoverlay
   index: -1
 clsc4
   rotate: false
-  xy: 431, 44
+  xy: 474, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
   index: -1
 ready
   rotate: false
-  xy: 658, 44
+  xy: 660, 44
   size: 202, 112
   orig: 202, 112
   offset: 0, 0
@@ -158,14 +158,14 @@ blue6
   index: -1
 clsc5
   rotate: false
-  xy: 474, 44
+  xy: 388, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
   index: -1
 pauseicon
   rotate: false
-  xy: 605, 44
+  xy: 607, 44
   size: 52, 52
   orig: 52, 52
   offset: 0, 0
@@ -179,7 +179,7 @@ yellow4
   index: -1
 basic0
   rotate: false
-  xy: 560, 44
+  xy: 517, 44
   size: 44, 44
   orig: 44, 44
   offset: 0, 0
@@ -207,7 +207,7 @@ background
   index: -1
 finish
   rotate: false
-  xy: 1, 157
+  xy: 304, 157
   size: 302, 102
   orig: 302, 102
   offset: 0, 0
@@ -221,9 +221,9 @@ blue0
   index: -1
 super
   rotate: false
-  xy: 908, 1
-  size: 42, 42
-  orig: 42, 42
+  xy: 562, 44
+  size: 44, 44
+  orig: 44, 44
   offset: 0, 0
   index: -1
 blue7
@@ -235,7 +235,7 @@ blue7
   index: -1
 clsc6
   rotate: false
-  xy: 388, 44
+  xy: 345, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
@@ -249,7 +249,7 @@ clsc12
   index: -1
 blue15
   rotate: false
-  xy: 822, 1
+  xy: 779, 1
   size: 42, 39
   orig: 42, 39
   offset: 0, 0
@@ -277,7 +277,7 @@ blue8
   index: -1
 clsc7
   rotate: false
-  xy: 345, 44
+  xy: 951, 1
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
@@ -298,7 +298,7 @@ yellow2
   index: -1
 blue2
   rotate: false
-  xy: 779, 1
+  xy: 822, 1
   size: 42, 39
   orig: 42, 39
   offset: 0, 0
@@ -312,7 +312,7 @@ clsc1
   index: -1
 pause
   rotate: false
-  xy: 304, 157
+  xy: 1, 157
   size: 302, 102
   orig: 302, 102
   offset: 0, 0
@@ -347,7 +347,7 @@ clsc14
   index: -1
 clsc8
   rotate: false
-  xy: 951, 1
+  xy: 908, 1
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
