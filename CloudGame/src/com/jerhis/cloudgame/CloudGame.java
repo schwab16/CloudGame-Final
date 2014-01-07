@@ -69,9 +69,9 @@ public class CloudGame {
 	public void touchDragged(int x, int y, int pointer) {
 		right = false;
 		left = false;
-		if (x >= 240)
+		if (x >= 400)
 			right = true;
-		if (x < 240)
+		if (x < 400)
 			left = true;	
 	}
 
