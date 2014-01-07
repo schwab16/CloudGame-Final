@@ -42,11 +42,11 @@ public class GameScreen implements Screen, InputProcessor {
 		super0 = textures.findRegion("super");
 		redChaser = textures.findRegion("guyred");
 		
-		for (int k = 2; k < 16; k++) {
+		for (int k = 1; k < 16; k++) {
 			sceneryClouds[k] = textures.findRegion("clsc" + k);
 		}
 		sceneryClouds[0] = pauseIcon;
-		sceneryClouds[1] = pauseIcon;
+		//sceneryClouds[1] = pauseIcon;
 		
 		for (int k = 0; k < 16; k++) {
 			blue[k] = textures.findRegion("blue" + k);
@@ -104,12 +104,12 @@ public class GameScreen implements Screen, InputProcessor {
 			switch (tile.type) {
 			case Scenery: 
 			case becomeScenery:	
-				if (tile.bit > 1) game.batch.draw(sceneryClouds[(int) tile.bit], tile.x - 20, tile.y - 20 - game.g.height); break;
+				if (tile.bit > 0) game.batch.draw(sceneryClouds[(int) tile.bit], tile.x - 20, tile.y - 20 - game.g.height); break;
 			case Default: 
-				game.batch.draw(basic0, tile.x - 20, tile.y - 20 - game.g.height); 
+				game.batch.draw(basic0, tile.x - 21, tile.y - 21 - game.g.height); 
 				if (tile.bit > 0 && tile.bit <= 16) game.batch.draw(blue[(int) (tile.bit - 1)], tile.x - 20, tile.y - 20 - game.g.height); break;
 			case Super: 
-				game.batch.draw(super0, tile.x - 20, tile.y - 20 - game.g.height); 
+				game.batch.draw(super0, tile.x - 21, tile.y - 21 - game.g.height); 
 				if (tile.bit > 0 && tile.bit <= 16) game.batch.draw(blue[(int) (tile.bit - 1)], tile.x - 20, tile.y - 20 - game.g.height); break;
 			//game.batch.draw(ready, oS(tile.x - 20), tile.y - 20); 
 			//default: game.batch.draw(pauseIcon, tile.x - 20, tile.y - 20 - game.g.height); break;

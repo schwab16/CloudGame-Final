@@ -9,7 +9,7 @@ public class TileScenery extends Tile {
 
 	@Override
 	public void update(float delta) {
-		if (neighborScore == 0 || neighborScore == 1)
+		if (neighborScore == 0)
 			type = Tile.Type.Removable;
 		else bit = neighborScore;
 	}

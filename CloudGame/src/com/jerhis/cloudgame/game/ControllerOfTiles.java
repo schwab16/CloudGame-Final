@@ -187,7 +187,7 @@ public class ControllerOfTiles {
 			}
 		}
 		
-		for (int qY = 0; qY < 5; qY++)
+		for (int qY = 0; qY < 6; qY++)
 			for (int qX = 0; qX < 9; qX++) {
 				int k = flip ? -qX + 4 : qX - 4;
 				addTile(x + k, y + 4 - qY, (int)cloud[qY][qX]);
@@ -346,103 +346,120 @@ public class ControllerOfTiles {
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,scen,scen,b___,b___,b___,b___},
-				{b___,b___,scen,SUPE,SUPE,scen,b___,b___,b___}};
+				{b___,b___,scen,SUPE,SUPE,scen,b___,b___,b___},
+				{b___,b___,b___,scen,scen,b___,b___,b___,b___}};
 		case 1: return new float[][] { //easy
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,scen,b___,b___,b___,b___},
 				{b___,b___,b___,scen,0.3f,scen,b___,b___,b___},
-				{b___,b___,scen,0.7f,1.0f,0.7f,scen,b___,b___}};
+				{b___,b___,scen,0.7f,1.0f,0.7f,scen,b___,b___},
+				{b___,b___,b___,scen,scen,scen,b___,b___,b___}};
 		case 2: return new float[][] { //easy
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,scen,b___,b___,b___,b___},
 				{b___,b___,b___,scen,0.3f,b___,b___,b___,b___},
 				{b___,b___,scen,0.3f,0.8f,scen,b___,b___,b___},
-				{b___,b___,scen,0.8f,1.0f,0.6f,scen,b___,b___}};
+				{b___,b___,scen,0.8f,1.0f,0.6f,scen,b___,b___},
+				{b___,b___,b___,scen,scen,scen,b___,b___,b___}};
 		case 3: return new float[][] { //medium
 				{b___,b___,b___,scen,b___,b___,b___,b___,b___},
 				{b___,b___,scen,0.3f,scen,b___,b___,b___,b___},
 				{b___,scen,0.4f,0.6f,0.3f,scen,b___,b___,b___},
 				{b___,scen,0.7f,1.0f,0.7f,scen,b___,b___,b___},
-				{b___,b___,scen,1.0f,1.0f,0.5f,scen,b___,b___}};
+				{b___,b___,scen,1.0f,1.0f,0.5f,scen,b___,b___},
+				{b___,b___,b___,scen,scen,scen,b___,b___,b___}};
 		case 4: return new float[][] { //v easy
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,scen,b___,b___,scen,b___,b___},
 				{b___,b___,scen,0.3f,scen,scen,0.3f,scen,b___},
 				{b___,scen,0.6f,scen,0.5f,scen,0.7f,0.6f,scen},
-				{b___,b___,scen,0.7f,1.0f,0.7f,1.0f,scen,b___}};
+				{b___,b___,scen,0.7f,1.0f,0.7f,1.0f,scen,b___},
+				{b___,b___,b___,scen,scen,scen,scen,b___,b___}};
 		case 5: return new float[][] { //easy - med
 				{b___,b___,b___,b___,b___,b___,scen,b___,b___},
 				{b___,b___,b___,b___,scen,scen,0.3f,scen,b___},
 				{b___,b___,b___,scen,0.3f,0.5f,0.7f,0.5f,scen},
 				{b___,b___,scen,0.6f,1.0f,scen,1.0f,scen,b___},
-				{b___,b___,scen,1.0f,1.0f,0.6f,1.0f,scen,b___}};
+				{b___,b___,scen,1.0f,1.0f,0.6f,1.0f,scen,b___},
+				{b___,b___,b___,scen,scen,scen,scen,b___,b___}};
 		case 6: return new float[][] { //medium
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,scen,b___,b___,b___,b___},
 				{b___,b___,b___,scen,0.5f,scen,b___,b___,b___},
 				{b___,b___,scen,0.6f,1.0f,0.6f,scen,b___,b___},
-				{b___,b___,scen,1.0f,1.0f,1.0f,0.6f,scen,b___}};
+				{b___,b___,scen,1.0f,1.0f,1.0f,0.6f,scen,b___},
+				{b___,b___,b___,scen,scen,scen,scen,b___,b___}};
 		case 7: return new float[][] { //easy - medium
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,scen,b___,b___,b___,b___,b___},
 				{b___,b___,scen,0.5f,scen,scen,b___,b___,b___},
 				{b___,scen,0.6f,1.0f,scen,0.5f,scen,b___,b___},
-				{b___,scen,1.0f,1.0f,0.7f,1.0f,0.6f,scen,b___}};
+				{b___,scen,1.0f,1.0f,0.7f,1.0f,0.6f,scen,b___},
+				{b___,b___,scen,scen,scen,scen,scen,b___,b___}};
 		case 8: return new float[][] { //easy- medium
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,scen,b___,b___,b___,b___,b___},
 				{b___,b___,scen,0.5f,scen,scen,b___,b___,b___},
 				{b___,b___,scen,1.0f,0.7f,0.5f,scen,b___,b___},
-				{b___,scen,0.7f,1.0f,1.0f,1.0f,0.7f,scen,b___}};
+				{b___,scen,0.7f,1.0f,1.0f,1.0f,0.7f,scen,b___},
+				{b___,b___,scen,scen,scen,scen,scen,b___,b___}};
 		case 9: return new float[][] { //med - hard
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,scen,scen,b___,b___,b___,b___},
 				{b___,b___,scen,0.5f,0.5f,scen,b___,b___,b___},
 				{b___,scen,0.6f,1.0f,1.0f,0.6f,scen,b___,b___},
-				{b___,scen,1.0f,1.0f,1.0f,1.0f,0.6f,scen,b___}};
+				{b___,scen,1.0f,1.0f,1.0f,1.0f,0.6f,scen,b___},
+				{b___,b___,scen,scen,scen,scen,scen,b___,b___}};
 		case 10: return new float[][] { //v easy
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,scen,b___,scen,b___,b___,b___},
 				{b___,b___,scen,0.5f,scen,0.5f,scen,scen,b___},
-				{b___,scen,0.6f,1.0f,0.8f,1.0f,0.6f,0.5f,scen}};
+				{b___,scen,0.6f,1.0f,0.8f,1.0f,0.6f,0.5f,scen},
+				{b___,b___,scen,scen,scen,scen,scen,scen,b___}};
 		case 11: return new float[][] { //medium
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,scen,scen,b___,b___,b___},
 				{b___,b___,scen,scen,0.5f,0.5f,scen,b___,b___},
 				{b___,scen,0.5f,0.6f,1.0f,1.0f,scen,scen,b___},
-				{b___,scen,1.0f,1.0f,1.0f,1.0f,0.7f,0.5f,scen}};
+				{b___,scen,1.0f,1.0f,1.0f,1.0f,0.7f,0.5f,scen},
+				{b___,b___,scen,scen,scen,scen,scen,scen,b___}};
 		case 12: return new float[][] { //hard
 				{b___,b___,b___,b___,scen,b___,b___,b___,b___},
 				{b___,b___,b___,scen,0.5f,scen,b___,b___,b___},
 				{b___,b___,scen,0.6f,1.0f,scen,b___,b___,b___},
 				{b___,b___,scen,1.0f,1.0f,0.7f,scen,scen,b___},
-				{b___,scen,0.8f,1.0f,1.0f,1.0f,0.6f,0.5f,scen}};
+				{b___,scen,0.8f,1.0f,1.0f,1.0f,0.6f,0.5f,scen},
+				{b___,b___,scen,scen,scen,scen,scen,scen,b___}};
 		case 13: return new float[][] { //med - hard
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,scen,scen,b___,b___,b___,b___,b___},
 				{b___,scen,0.5f,0.5f,scen,b___,scen,b___,b___},
 				{b___,scen,1.0f,1.0f,0.6f,scen,0.5f,scen,b___},
-				{scen,0.7f,1.0f,1.0f,1.0f,0.8f,1.0f,0.6f,scen}};
+				{scen,0.7f,1.0f,1.0f,1.0f,0.8f,1.0f,0.6f,scen},
+				{b___,scen,scen,scen,scen,scen,scen,scen,b___}};
 		case 14: return new float[][] { //hard
 				{b___,b___,b___,scen,scen,scen,b___,b___,b___},
 				{b___,b___,scen,0.5f,0.3f,0.5f,scen,b___,b___},
 				{b___,scen,0.6f,1.0f,1.0f,1.0f,scen,scen,b___},
 				{scen,0.6f,1.0f,1.0f,1.0f,1.0f,0.7f,0.5f,scen},
-				{scen,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,scen}};
+				{scen,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,scen},
+				{b___,scen,scen,scen,scen,scen,scen,scen,b___}};
 		case 15: return new float[][] { //easy
 				{b___,b___,b___,b___,scen,scen,scen,b___,b___},
 				{b___,b___,b___,scen,1.0f,1.0f,1.0f,scen,b___},
 				{b___,b___,b___,b___,scen,1.0f,scen,b___,b___},
 				{b___,b___,b___,scen,0.5f,scen,b___,b___,b___},
-				{b___,b___,scen,0.7f,1.0f,0.7f,scen,b___,b___}};
+				{b___,b___,scen,0.7f,1.0f,0.7f,scen,b___,b___},
+				{b___,b___,b___,scen,scen,scen,b___,b___,b___}};
 		default: return new float[][] {
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,scen,b___,b___,b___,b___},
-				{b___,b___,b___,scen,1.0f,scen,b___,b___,b___}};
+				{b___,b___,b___,scen,1.0f,scen,b___,b___,b___},
+				{b___,b___,b___,b___,scen,b___,b___,b___,b___}};
 		}
 	}
 	
