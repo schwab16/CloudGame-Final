@@ -4,7 +4,7 @@ filter: Linear,Linear
 repeat: none
 clsc11
   rotate: false
-  xy: 173, 44
+  xy: 302, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
@@ -18,21 +18,21 @@ blue3
   index: -1
 clsc2
   rotate: false
-  xy: 302, 44
+  xy: 130, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
   index: -1
 clsc9
   rotate: false
-  xy: 130, 44
+  xy: 87, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
   index: -1
 clsc13
   rotate: false
-  xy: 130, 44
+  xy: 87, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
@@ -60,7 +60,7 @@ blue4
   index: -1
 clsc3
   rotate: false
-  xy: 87, 44
+  xy: 517, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
@@ -116,14 +116,14 @@ blackoverlay
   index: -1
 clsc4
   rotate: false
-  xy: 474, 44
+  xy: 431, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
   index: -1
 ready
   rotate: false
-  xy: 615, 44
+  xy: 658, 44
   size: 202, 112
   orig: 202, 112
   offset: 0, 0
@@ -158,14 +158,14 @@ blue6
   index: -1
 clsc5
   rotate: false
-  xy: 431, 44
+  xy: 474, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
   index: -1
 pauseicon
   rotate: false
-  xy: 562, 44
+  xy: 605, 44
   size: 52, 52
   orig: 52, 52
   offset: 0, 0
@@ -179,7 +179,7 @@ yellow4
   index: -1
 basic0
   rotate: false
-  xy: 517, 44
+  xy: 560, 44
   size: 44, 44
   orig: 44, 44
   offset: 0, 0
@@ -207,7 +207,7 @@ background
   index: -1
 finish
   rotate: false
-  xy: 304, 157
+  xy: 1, 157
   size: 302, 102
   orig: 302, 102
   offset: 0, 0
@@ -235,14 +235,14 @@ blue7
   index: -1
 clsc6
   rotate: false
-  xy: 345, 44
+  xy: 388, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
   index: -1
 clsc12
   rotate: false
-  xy: 259, 44
+  xy: 173, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
@@ -277,7 +277,7 @@ blue8
   index: -1
 clsc7
   rotate: false
-  xy: 388, 44
+  xy: 345, 44
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
@@ -303,9 +303,16 @@ blue2
   orig: 42, 39
   offset: 0, 0
   index: -1
+clsc1
+  rotate: false
+  xy: 259, 44
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
 pause
   rotate: false
-  xy: 1, 157
+  xy: 304, 157
   size: 302, 102
   orig: 302, 102
   offset: 0, 0
