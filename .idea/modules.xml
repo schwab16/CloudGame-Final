@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CloudGame/CloudGame.iml" filepath="$PROJECT_DIR$/CloudGame/CloudGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CloudGame-android/CloudGame-android.iml" filepath="$PROJECT_DIR$/CloudGame-android/CloudGame-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CloudGame-desktop/CloudGame-desktop.iml" filepath="$PROJECT_DIR$/CloudGame-desktop/CloudGame-desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CloudGame-html/CloudGame-html.iml" filepath="$PROJECT_DIR$/CloudGame-html/CloudGame-html.iml" />
+    </modules>
+  </component>
+</project>
+

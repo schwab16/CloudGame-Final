@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="dexedLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CloudGame-android/bin/dexedLibs/gdx-17cfaccedd372c0d779604a852cffc1d.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CloudGame-android/bin/dexedLibs/annotations-deab7cbcea8091efa8be6249d4240f70.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CloudGame-android/bin/dexedLibs/gdx-backend-android-70098bca07ecdcc6cf045707c4993f17.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

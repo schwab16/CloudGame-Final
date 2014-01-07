@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CloudGame-html/war/WEB-INF/lib/gdx-backend-gwt-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/CloudGame-html/war/WEB-INF/lib/gdx-backend-gwt.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
