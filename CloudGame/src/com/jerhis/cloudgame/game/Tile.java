@@ -9,6 +9,7 @@ public abstract class Tile {
 	public int arrayX, arrayY;
 	public Tile aboveTile, belowTile, rightTile, leftTile;
 	public Type type;
+	public final float DROP_TIME = 0.08f;
 	public float bit; //bit stores other information
 	//default: how much hits are left
 	//scenery: orientation (based on neighbor score)
