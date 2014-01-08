@@ -8,7 +8,7 @@ public class TileSuper extends Tile {
 		super(x, y, 0, Tile.Type.Super);
 	}
 
-	public final float DROP_TIME = 0.2f;
+	public final float DROP_TIME = 0.1f;
 	public float dropStage = DROP_TIME;
 
 	@Override
