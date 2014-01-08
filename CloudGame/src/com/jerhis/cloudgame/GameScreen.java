@@ -42,7 +42,7 @@ public class GameScreen implements Screen, InputProcessor {
 		super0 = textures.findRegion("super");
 		redChaser = textures.findRegion("guyred");
 		
-		for (int k = 1; k < 16; k++) {
+		for (int k = 1; k < 16; k++) { 
 			sceneryClouds[k] = textures.findRegion("clsc" + k);
 		}
 		sceneryClouds[0] = pauseIcon;

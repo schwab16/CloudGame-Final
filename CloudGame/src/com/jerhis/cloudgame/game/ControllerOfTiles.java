@@ -66,7 +66,7 @@ public class ControllerOfTiles {
 	}
 	
 	private void hitNeighbors(int arrayX, int arrayY) {
-		/* all plus 2
+		/* all plus 2 then x2
 		 * 0 0 0 5 0 0 0
 		 * 0 2 5 8 5 2 0
 		 * 2 5 a x a 5 2
@@ -138,8 +138,9 @@ public class ControllerOfTiles {
 		
 		}
 		spawnCloud(10,1,0,0); //spawns base cloud
-		spawnCloud(rng(7,9),6,rng(1,2),rng(2,3)); //spawns first clouds
-		spawnCloud(rng(10,12),6,rng(1,2),rng(2,3));
+		spawnCloud(rng(7,10),6,rng(1,2),rng(2,3)); //spawns first clouds
+		spawnCloud(rng(9,12),6,rng(1,2),rng(2,3));
+		//spawnCloud(10,6,16,0);
 	}
 	
 	public void spawn(float totalTime, float height) {
@@ -299,7 +300,7 @@ public class ControllerOfTiles {
 			{7}} ;
 
 	private final int[][] NUM_CLOUDS = 
-		   {{1,1,1,1,1,2,2,2,2,2,3,3,3,3}, //a number > 0
+		   {{1,1,1,1,1,2,2,2,2,2,3,3,3,3}, //a number > 0 
 			{1,1,1,1,1,1,2,2,2,2,2,3,3,3},
 			{1,1,1,1,1,1,1,2,2,2,2,3,3,3},
 			{1,1,1,1,1,1,1,1,2,2,2,2,3,3},
@@ -310,8 +311,8 @@ public class ControllerOfTiles {
 
 	private final int[][] SUPERS =    
 		  { {2,3,3},  //4 is maximum!
-			{2,2,3},
 			{1,2,3},
+			{1,2,2},
 			{1,2,2},
 			{1,2},
 			{1,1,2},
@@ -328,16 +329,15 @@ public class ControllerOfTiles {
 			{4,5,5,6,6,7,8,9,10,11,12,13,13,14,14,15},
 			{3,3,4,4,5,6,7,8,9,10,11,12,13,14,15,15,16,16}} ;
 	
-	private final int[][] CLOUD_TYPE = //0st 1e 2em 3mh 4em 5mh 6em 7m 8m 9h 10e 11m 12mh 13mh 14sh 15m
-									//st: 0 ||| e: 1,10 ||| em: 2,4,6 ||| m: 7,8,11,15 ||| mh: 3,5,12,13 ||| h: 9,14
-		  { {1,2,10}, 
-			{1,2,10,4},
-			{2,5,5,7,7,8,8,4,3,6,9},
-			{2,3,3,6,6,11,11,4,10,5,7,8},
-			{2,3,6,11,4,10,5,7,8},
-			{2,9,9,13,13,3,6,11,4,10,5,7,8},
-			{2,9,13,3,6,11,4,10,5,7,8},
-			{2,3,4,5,6,7,8,9,10,11,12,12,13,14,14}} ;
+	private final int[][] CLOUD_TYPE = //0st 1e 2em 3mh 4em 5mh 6em 7m 8m 9h 10e 11m 12mh 13mh 14sh 15m							
+		  { {1,10,2,4,6},           //st: 0 ||| e: 1,10 ||| em: 2,4,6 ||| m: 7,8,11,15 ||| mh: 3,5,12,13 ||| h: 9,14
+			{1,10,2,4,6,7,8,11,15},
+			{1,10,2,4,6,7,8,11,15},
+			{1,10,2,4,6,7,8,11,15,3,5,12,13},
+			{1,10,2,4,6,7,8,11,15,3,5,12,13,9,14},
+			{2,4,6,7,8,11,15,3,5,12,13,9,14},
+			{2,4,6,7,8,11,15,3,5,12,13,9,14},
+			{2,4,6,7,8,11,15,3,5,12,13,9,14,9,14,7,8,11,15,3,5,12,13,9,14}} ;
 	
 	
 	private float[][] getCloudShape(int cloudShape) {
@@ -346,9 +346,9 @@ public class ControllerOfTiles {
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
-				{b___,b___,b___,scen,scen,b___,b___,b___,b___},
-				{b___,b___,scen,SUPE,SUPE,scen,b___,b___,b___},
-				{b___,b___,b___,scen,scen,b___,b___,b___,b___}};
+				{b___,b___,scen,scen,scen,scen,b___,b___,b___},
+				{b___,scen,1.0f,SUPE,SUPE,1.0f,scen,b___,b___},
+				{b___,b___,scen,scen,scen,scen,b___,b___,b___}};
 		case 1: return new float[][] { //easy *0
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
@@ -455,12 +455,12 @@ public class ControllerOfTiles {
 				{b___,b___,scen,0.6f,1.0f,1.0f,scen,b___,b___},
 				{b___,b___,b___,scen,scen,scen,b___,b___,b___}};
 		default: return new float[][] {
-				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
-				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
-				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
-				{b___,b___,b___,b___,scen,b___,b___,b___,b___},
-				{b___,b___,b___,scen,1.0f,scen,b___,b___,b___},
-				{b___,b___,b___,b___,scen,b___,b___,b___,b___}};
+				{scen,scen,scen,scen,scen,scen,scen,scen,scen},
+				{scen,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,scen},
+				{scen,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,scen},
+				{scen,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,scen},
+				{scen,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,scen},
+				{scen,scen,scen,scen,scen,scen,scen,scen,scen}};
 		}
 	}
 	

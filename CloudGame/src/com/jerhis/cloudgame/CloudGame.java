@@ -69,7 +69,7 @@ public class CloudGame {
 	public void touchDragged(int x, int y, int pointer) {
 		right = false;
 		left = false;
-		if (x >= 400)
+		if (x >= 400) 
 			right = true;
 		if (x < 400)
 			left = true;	
@@ -100,9 +100,9 @@ public class CloudGame {
 	
 	public void highScore() {
 		//sets high score to current highscore	
-		if (score > highScore) game.prefs.putInteger("best" + gameType, (int)score);
+		if (score > highScore) game.prefs.putInteger(game.fileName + gameType, (int)score);
 		game.prefs.flush();
-		highScore = game.prefs.getInteger("best" + gameType, 0);
+		highScore = game.prefs.getInteger(game.fileName + gameType, 0);
 	}
 
 }

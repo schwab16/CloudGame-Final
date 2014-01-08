@@ -16,7 +16,7 @@ public class TileBasic extends Tile {
 			dropStage -= delta;
 			if (dropStage <= 0) {
 				dropStage = DROP_TIME;
-				bit--;
+				bit--; 
 			}
 		}
 		

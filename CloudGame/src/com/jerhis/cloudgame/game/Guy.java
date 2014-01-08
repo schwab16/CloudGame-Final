@@ -17,7 +17,7 @@ public class Guy {
 	
 	public Guy(){
 		this(400,150);
-	}
+	} 
 	
 	public void update(float delta, boolean right, boolean left, float height) {
 		velY -= delta * GRAVITY;

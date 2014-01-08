@@ -14,6 +14,7 @@ public class MyGdxGame extends Game {
 	Preferences prefs;
 	CloudGame g;
 	boolean debug = false;
+	String fileName = "highscore"; 
  
 	public void create() {
 		
