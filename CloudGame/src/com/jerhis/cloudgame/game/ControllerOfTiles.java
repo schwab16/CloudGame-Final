@@ -77,35 +77,35 @@ public class ControllerOfTiles {
 		for (Tile t: tiles) {
 			if (t instanceof TileScenery) continue;
 			if (t.arrayY == arrayY + 1) {
-				if (t.arrayX == arrayX - 2) t.bit += 4; 
-				else if (t.arrayX == arrayX - 1) t.bit += 7; 
-				else if (t.arrayX == arrayX + 0) t.bit += 10; 
-				else if (t.arrayX == arrayX + 1) t.bit += 7; 
-				else if (t.arrayX == arrayX + 2) t.bit += 4; 
+				if (t.arrayX == arrayX - 2) t.bit += 8; 
+				else if (t.arrayX == arrayX - 1) t.bit += 14; 
+				else if (t.arrayX == arrayX + 0) t.bit += 20; 
+				else if (t.arrayX == arrayX + 1) t.bit += 14; 
+				else if (t.arrayX == arrayX + 2) t.bit += 8; 
 			}
 			else if (t.arrayY == arrayY) {
-				if (t.arrayX == arrayX - 3) t.bit += 4; 
-				else if (t.arrayX == arrayX - 2) t.bit += 7; 
-				else if (t.arrayX == arrayX - 1) t.bit += 12; 
-				else if (t.arrayX == arrayX + 1) t.bit += 12; 
-				else if (t.arrayX == arrayX + 2) t.bit += 7; 
-				else if (t.arrayX == arrayX + 3) t.bit += 4; 
+				if (t.arrayX == arrayX - 3) t.bit += 8; 
+				else if (t.arrayX == arrayX - 2) t.bit += 14; 
+				else if (t.arrayX == arrayX - 1) t.bit += 24; 
+				else if (t.arrayX == arrayX + 1) t.bit += 24; 
+				else if (t.arrayX == arrayX + 2) t.bit += 14; 
+				else if (t.arrayX == arrayX + 3) t.bit += 8; 
 			}
 			else if (t.arrayY == arrayY - 1) {
-				if (t.arrayX == arrayX - 2) t.bit += 6; 
-				else if (t.arrayX == arrayX - 1) t.bit += 10; 
-				else if (t.arrayX == arrayX + 0) t.bit += 15; 
-				else if (t.arrayX == arrayX + 1) t.bit += 10; 
-				else if (t.arrayX == arrayX + 2) t.bit += 6; 
+				if (t.arrayX == arrayX - 2) t.bit += 12; 
+				else if (t.arrayX == arrayX - 1) t.bit += 20; 
+				else if (t.arrayX == arrayX + 0) t.bit += 30; 
+				else if (t.arrayX == arrayX + 1) t.bit += 20; 
+				else if (t.arrayX == arrayX + 2) t.bit += 12; 
 			}
 			else if (t.arrayY == arrayY - 2) {
-				if (t.arrayX == arrayX - 1) t.bit += 6;  
-				else if (t.arrayX == arrayX + 0) t.bit += 10; 
-				else if (t.arrayX == arrayX + 1) t.bit += 6;  
+				if (t.arrayX == arrayX - 1) t.bit += 12;  
+				else if (t.arrayX == arrayX + 0) t.bit += 20; 
+				else if (t.arrayX == arrayX + 1) t.bit += 12;  
 			}
-			else if (t.arrayX == arrayX + 0 && t.arrayY == arrayY + 2) t.bit += 7; 
-			else if (t.arrayX == arrayX + 0 && t.arrayY == arrayY - 3) t.bit += 5; 
-			if (t.bit > 16) t.type = Type.becomeScenery;
+			else if (t.arrayX == arrayX + 0 && t.arrayY == arrayY + 2) t.bit += 14; 
+			else if (t.arrayX == arrayX + 0 && t.arrayY == arrayY - 3) t.bit += 10; 
+			if (t.bit > 30) t.type = Type.becomeScenery;
 		}
 	}
 
@@ -290,33 +290,23 @@ public class ControllerOfTiles {
 	
 	private final int[][] INTERVALS = 
 		  { {5,6}, //space between the clouds
+			{5,6},
+			{5,6,7},
 			{5,6,7},
 			{6,7},
 			{6,7},
 			{7},
-			{7},
-			{7},
 			{7}} ;
 
 	private final int[][] NUM_CLOUDS = 
-		   {{1,1,2,2,2,2,3,3,3,3,3,3,3,3,3,3}, //a number > 0
-			{1,1,1,2,2,2,2,2,3,3,3,3,3,3,3,3},
-			{1,1,1,1,2,2,2,2,2,3,3,3,3,3,3,3},
-			{1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,3},
-			{1,1,1,1,1,1,1,2,2,2,2,2,3,3,3,3},
-			{1,1,1,1,1,1,1,1,1,2,2,2,2,3,3,3},
-			{1,1,1,1,1,1,1,1,1,1,1,2,2,2,3,3},
-			{1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,3}} ;
-
-	private final int[][] CLOUD_TYPE = //1e 2e 3m 4ve 5em 6m 7em 8em 9mh 10ve 11m 12h 13mh 14h
-		  { {1,2,4,10,5}, 
-			{1,2,4,10,5,7,8},
-			{5,5,7,7,8,8,4,3,6,9},
-			{3,3,6,6,11,11,4,10,5,7,8},
-			{3,6,11,1,2,4,10,5,7,8},
-			{9,9,13,13,3,6,11,1,2,4,10,5,7,8},
-			{9,13,3,6,11,1,2,4,10,5,7,8},
-			{1,2,3,4,5,6,7,8,9,10,11,12,12,13,14,14}} ;
+		   {{1,1,1,1,1,2,2,2,2,2,3,3,3,3}, //a number > 0
+			{1,1,1,1,1,1,2,2,2,2,2,3,3,3},
+			{1,1,1,1,1,1,1,2,2,2,2,3,3,3},
+			{1,1,1,1,1,1,1,1,2,2,2,2,3,3},
+			{1,1,1,1,1,1,1,1,1,2,2,2,3,3},
+			{1,1,1,1,1,1,1,1,1,1,2,2,2,3},
+			{1,1,1,1,1,1,1,1,1,1,1,2,2,2},
+			{1,1,1,1,1,1,1,1,1,1,1,1,2,2}} ;
 
 	private final int[][] SUPERS =    
 		  { {2,3,3},  //4 is maximum!
@@ -338,6 +328,17 @@ public class ControllerOfTiles {
 			{4,5,5,6,6,7,8,9,10,11,12,13,13,14,14,15},
 			{3,3,4,4,5,6,7,8,9,10,11,12,13,14,15,15,16,16}} ;
 	
+	private final int[][] CLOUD_TYPE = //0st 1e 2em 3mh 4em 5mh 6em 7m 8m 9h 10e 11m 12mh 13mh 14sh 15m
+									//st: 0 ||| e: 1,10 ||| em: 2,4,6 ||| m: 7,8,11,15 ||| mh: 3,5,12,13 ||| h: 9,14
+		  { {1,2,10}, 
+			{1,2,10,4},
+			{2,5,5,7,7,8,8,4,3,6,9},
+			{2,3,3,6,6,11,11,4,10,5,7,8},
+			{2,3,6,11,4,10,5,7,8},
+			{2,9,9,13,13,3,6,11,4,10,5,7,8},
+			{2,9,13,3,6,11,4,10,5,7,8},
+			{2,3,4,5,6,7,8,9,10,11,12,12,13,14,14}} ;
+	
 	
 	private float[][] getCloudShape(int cloudShape) {
 		switch (cloudShape) {
@@ -348,110 +349,110 @@ public class ControllerOfTiles {
 				{b___,b___,b___,scen,scen,b___,b___,b___,b___},
 				{b___,b___,scen,SUPE,SUPE,scen,b___,b___,b___},
 				{b___,b___,b___,scen,scen,b___,b___,b___,b___}};
-		case 1: return new float[][] { //easy
+		case 1: return new float[][] { //easy *0
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,scen,b___,b___,b___,b___},
-				{b___,b___,b___,scen,0.3f,scen,b___,b___,b___},
-				{b___,b___,scen,0.7f,1.0f,0.7f,scen,b___,b___},
+				{b___,b___,b___,scen,0.1f,scen,b___,b___,b___},
+				{b___,b___,scen,0.5f,1.0f,0.5f,scen,b___,b___},
 				{b___,b___,b___,scen,scen,scen,b___,b___,b___}};
-		case 2: return new float[][] { //easy
+		case 2: return new float[][] { //easy med *1
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,scen,b___,b___,b___,b___},
-				{b___,b___,b___,scen,0.3f,scen,b___,b___,b___},
-				{b___,b___,scen,0.3f,0.8f,scen,b___,b___,b___},
-				{b___,b___,scen,0.8f,1.0f,0.6f,scen,b___,b___},
+				{b___,b___,b___,scen,0.1f,scen,b___,b___,b___},
+				{b___,b___,scen,0.2f,0.4f,scen,b___,b___,b___},
+				{b___,b___,scen,0.4f,1.0f,0.3f,scen,b___,b___},
 				{b___,b___,b___,scen,scen,scen,b___,b___,b___}};
-		case 3: return new float[][] { //medium
+		case 3: return new float[][] { //medium hard *3
 				{b___,b___,b___,scen,b___,b___,b___,b___,b___},
-				{b___,b___,scen,0.3f,scen,b___,b___,b___,b___},
-				{b___,scen,0.4f,0.6f,0.3f,scen,b___,b___,b___},
-				{b___,scen,0.7f,1.0f,0.7f,scen,b___,b___,b___},
-				{b___,b___,scen,1.0f,1.0f,0.5f,scen,b___,b___},
+				{b___,b___,scen,0.1f,scen,b___,b___,b___,b___},
+				{b___,scen,0.2f,0.4f,0.2f,scen,b___,b___,b___},
+				{b___,scen,0.4f,1.0f,0.4f,scen,b___,b___,b___},
+				{b___,b___,scen,1.0f,1.0f,0.3f,scen,b___,b___},
 				{b___,b___,b___,scen,scen,scen,b___,b___,b___}};
-		case 4: return new float[][] { //v easy
+		case 4: return new float[][] { //easy med *1
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
-				{b___,b___,b___,scen,b___,b___,scen,b___,b___},
-				{b___,b___,scen,0.3f,scen,scen,0.3f,scen,b___},
-				{b___,scen,0.6f,scen,0.5f,scen,0.7f,0.6f,scen},
-				{b___,b___,scen,0.7f,1.0f,0.7f,1.0f,scen,b___},
+				{b___,b___,b___,scen,b___,scen,scen,b___,b___},
+				{b___,b___,scen,0.1f,scen,0.1f,0.1f,scen,b___},
+				{b___,scen,0.3f,scen,0.2f,scen,0.7f,0.3f,scen},
+				{b___,b___,scen,1.0f,0.6f,1.0f,1.0f,scen,b___},
 				{b___,b___,b___,scen,scen,scen,scen,b___,b___}};
-		case 5: return new float[][] { //easy - med
+		case 5: return new float[][] { //med hard *3
 				{b___,b___,b___,b___,b___,b___,scen,b___,b___},
-				{b___,b___,b___,b___,scen,scen,0.3f,scen,b___},
-				{b___,b___,b___,scen,0.3f,0.5f,0.7f,0.5f,scen},
-				{b___,b___,scen,0.6f,1.0f,scen,1.0f,scen,b___},
-				{b___,b___,scen,1.0f,1.0f,0.6f,1.0f,scen,b___},
+				{b___,b___,b___,b___,scen,scen,0.1f,scen,b___},
+				{b___,b___,b___,scen,0.1f,0.2f,0.6f,0.3f,scen},
+				{b___,b___,scen,0.3f,0.6f,scen,1.0f,scen,b___},
+				{b___,b___,scen,0.6f,1.0f,1.0f,1.0f,scen,b___},
 				{b___,b___,b___,scen,scen,scen,scen,b___,b___}};
-		case 6: return new float[][] { //medium
+		case 6: return new float[][] { //easy med *1
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,scen,b___,b___,b___,b___},
-				{b___,b___,b___,scen,0.5f,scen,b___,b___,b___},
-				{b___,b___,scen,0.6f,1.0f,0.6f,scen,b___,b___},
-				{b___,b___,scen,1.0f,1.0f,1.0f,0.6f,scen,b___},
+				{b___,b___,b___,scen,0.1f,scen,b___,b___,b___},
+				{b___,b___,scen,0.2f,0.6f,0.2f,scen,b___,b___},
+				{b___,b___,scen,0.6f,1.0f,0.6f,0.2f,scen,b___},
 				{b___,b___,b___,scen,scen,scen,scen,b___,b___}};
-		case 7: return new float[][] { //easy - medium
+		case 7: return new float[][] { //med *2
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
-				{b___,b___,b___,scen,b___,b___,b___,b___,b___},
-				{b___,b___,scen,0.5f,scen,scen,b___,b___,b___},
-				{b___,scen,0.6f,1.0f,scen,0.5f,scen,b___,b___},
-				{b___,scen,1.0f,1.0f,0.7f,1.0f,0.6f,scen,b___},
+				{b___,b___,b___,scen,b___,scen,scen,b___,b___},
+				{b___,b___,scen,0.1f,scen,0.1f,0.1f,scen,b___},
+				{b___,scen,0.3f,0.4f,scen,0.4f,scen,b___,b___},
+				{b___,scen,0.5f,1.0f,0.7f,1.0f,0.6f,scen,b___},
 				{b___,b___,scen,scen,scen,scen,scen,b___,b___}};
-		case 8: return new float[][] { //easy- medium
+		case 8: return new float[][] { //med *2
+				{b___,b___,b___,b___,b___,b___,scen,b___,b___},
+				{b___,b___,b___,scen,b___,scen,0.1f,scen,b___},
+				{b___,b___,scen,0.1f,scen,scen,0.4f,scen,b___},
+				{b___,b___,scen,0.4f,0.2f,0.2f,scen,b___,b___},
+				{b___,scen,0.3f,1.0f,0.4f,0.4f,1.0f,scen,b___},
+				{b___,b___,scen,scen,scen,scen,scen,b___,b___}};
+		case 9: return new float[][] { //hard *4
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
-				{b___,b___,b___,scen,b___,b___,b___,b___,b___},
-				{b___,b___,scen,0.5f,scen,scen,b___,b___,b___},
-				{b___,b___,scen,1.0f,0.7f,0.5f,scen,b___,b___},
-				{b___,scen,0.7f,1.0f,1.0f,1.0f,0.7f,scen,b___},
+				{b___,0.1f,0.1f,scen,scen,b___,b___,b___,b___},
+				{b___,0.4f,scen,0.2f,0.1f,scen,b___,b___,b___},
+				{b___,1.0f,1.0f,0.4f,0.4f,0.2f,scen,b___,b___},
+				{b___,scen,1.0f,1.0f,1.0f,0.4f,0.2f,scen,b___},
 				{b___,b___,scen,scen,scen,scen,scen,b___,b___}};
-		case 9: return new float[][] { //med - hard
-				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
-				{b___,b___,b___,scen,scen,b___,b___,b___,b___},
-				{b___,b___,scen,0.5f,0.5f,scen,b___,b___,b___},
-				{b___,scen,0.6f,1.0f,1.0f,0.6f,scen,b___,b___},
-				{b___,scen,1.0f,1.0f,1.0f,1.0f,0.6f,scen,b___},
-				{b___,b___,scen,scen,scen,scen,scen,b___,b___}};
-		case 10: return new float[][] { //v easy
+		case 10: return new float[][] { //easy *0
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,scen,b___,scen,b___,b___,b___},
-				{b___,b___,scen,0.5f,scen,0.5f,scen,scen,b___},
-				{b___,scen,0.6f,1.0f,0.8f,1.0f,0.6f,0.5f,scen},
+				{b___,b___,scen,0.1f,scen,0.1f,scen,scen,b___},
+				{b___,scen,0.4f,1.0f,0.4f,1.0f,0.4f,0.1f,scen},
 				{b___,b___,scen,scen,scen,scen,scen,scen,b___}};
-		case 11: return new float[][] { //medium
+		case 11: return new float[][] { //medium *2
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
 				{b___,b___,b___,b___,scen,scen,b___,b___,b___},
-				{b___,b___,scen,scen,0.5f,0.5f,scen,b___,b___},
-				{b___,scen,0.5f,0.6f,1.0f,1.0f,scen,scen,b___},
-				{b___,scen,1.0f,1.0f,1.0f,1.0f,0.7f,0.5f,scen},
+				{b___,b___,scen,scen,0.1f,0.1f,scen,b___,b___},
+				{b___,scen,0.1f,0.2f,0.4f,0.4f,scen,scen,b___},
+				{b___,scen,0.4f,0.4f,1.0f,1.0f,0.3f,0.1f,scen},
 				{b___,b___,scen,scen,scen,scen,scen,scen,b___}};
-		case 12: return new float[][] { //hard
+		case 12: return new float[][] { //med *3
 				{b___,b___,b___,b___,scen,b___,b___,b___,b___},
-				{b___,b___,b___,scen,0.5f,scen,b___,b___,b___},
-				{b___,b___,scen,0.6f,1.0f,scen,b___,b___,b___},
-				{b___,b___,scen,1.0f,1.0f,0.7f,scen,scen,b___},
-				{b___,scen,0.8f,1.0f,1.0f,1.0f,0.6f,0.5f,scen},
+				{b___,scen,b___,scen,0.1f,scen,b___,b___,b___},
+				{scen,0.1f,scen,0.2f,0.4f,scen,b___,b___,b___},
+				{scen,0.4f,0.3f,0.4f,1.0f,0.3f,scen,scen,b___},
+				{b___,scen,0.6f,1.0f,1.0f,0.4f,0.2f,0.1f,scen},
 				{b___,b___,scen,scen,scen,scen,scen,scen,b___}};
-		case 13: return new float[][] { //med - hard
+		case 13: return new float[][] { //med *3
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
-				{b___,b___,scen,scen,b___,b___,b___,b___,b___},
-				{b___,scen,0.5f,0.5f,scen,b___,scen,b___,b___},
-				{b___,scen,1.0f,1.0f,0.6f,scen,0.5f,scen,b___},
-				{scen,0.7f,1.0f,1.0f,1.0f,0.8f,1.0f,0.6f,scen},
+				{b___,b___,scen,scen,b___,scen,scen,scen,b___},
+				{b___,scen,0.1f,0.1f,scen,0.1f,0.2f,0.1f,scen},
+				{b___,scen,0.4f,0.4f,0.2f,scen,0.4f,scen,b___},
+				{scen,0.3f,1.0f,1.0f,0.7f,0.7f,1.0f,0.7f,scen},
 				{b___,scen,scen,scen,scen,scen,scen,scen,b___}};
-		case 14: return new float[][] { //hard
+		case 14: return new float[][] { //super hard *7
 				{b___,b___,b___,scen,scen,scen,b___,b___,b___},
-				{b___,b___,scen,0.5f,0.3f,0.5f,scen,b___,b___},
-				{b___,scen,0.6f,1.0f,1.0f,1.0f,scen,scen,b___},
-				{scen,0.6f,1.0f,1.0f,1.0f,1.0f,0.7f,0.5f,scen},
-				{scen,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,1.0f,scen},
+				{b___,b___,scen,0.1f,0.2f,0.1f,scen,b___,b___},
+				{b___,scen,0.2f,0.4f,0.4f,0.4f,scen,scen,b___},
+				{scen,0.2f,0.4f,1.0f,1.0f,1.0f,0.3f,0.1f,scen},
+				{scen,0.4f,1.0f,1.0f,1.0f,1.0f,0.4f,0.4f,scen},
 				{b___,scen,scen,scen,scen,scen,scen,scen,b___}};
-		case 15: return new float[][] { //easy
+		case 15: return new float[][] { //med *2
 				{b___,b___,b___,b___,scen,scen,scen,b___,b___},
-				{b___,b___,b___,scen,1.0f,1.0f,1.0f,scen,b___},
-				{b___,b___,b___,b___,scen,1.0f,scen,b___,b___},
+				{b___,b___,b___,scen,0.1f,0.2f,0.1f,scen,b___},
+				{b___,b___,scen,0.2f,scen,0.4f,scen,b___,b___},
 				{b___,b___,b___,scen,0.5f,scen,b___,b___,b___},
-				{b___,b___,scen,0.7f,1.0f,0.7f,scen,b___,b___},
+				{b___,b___,scen,0.6f,1.0f,1.0f,scen,b___,b___},
 				{b___,b___,b___,scen,scen,scen,b___,b___,b___}};
 		default: return new float[][] {
 				{b___,b___,b___,b___,b___,b___,b___,b___,b___},

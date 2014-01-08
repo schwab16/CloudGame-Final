@@ -6,7 +6,7 @@ public class TileBasic extends Tile {
 		super(x, y, 0, Tile.Type.Default);
 	}
 
-	public final float DROP_TIME = 0.2f;
+	public final float DROP_TIME = 0.08f;
 	public float dropStage = DROP_TIME;
 
 	@Override

@@ -8,7 +8,7 @@ public class Guy {
 	
 	public final float JUMPVELOCITY = 6, MOMENTUM = 1f, GRAVITY = 9,
 			MAXMOMENTUM = 7, RESISTANCE = 0.5f, OFFSETSPEED = 10f,
-			REGULAR_JUMP = 4.0f, SUPER_JUMP = 10.5f;
+			REGULAR_JUMP = 4.0f, SUPER_JUMP = 10.8f;
 	
 	public Guy(float x, float y){
 		this.x = x; 

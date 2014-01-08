@@ -18,7 +18,7 @@ public class GameScreen implements Screen, InputProcessor {
 	TextureAtlas textures;//, textures2;
 	AtlasRegion bg, ready, finish, pause, pauseIcon, blackOverlay, rain, 
 		basic0, super0, redChaser, sceneryClouds[] = new AtlasRegion[16], 
-		blue[] = new AtlasRegion[16]; //yellow[] = new AtlasRegion[10];
+		blue[] = new AtlasRegion[31]; //yellow[] = new AtlasRegion[10];
 	State state;
 	//Texture splash;
 	 
@@ -48,8 +48,8 @@ public class GameScreen implements Screen, InputProcessor {
 		sceneryClouds[0] = pauseIcon;
 		//sceneryClouds[1] = pauseIcon;
 		
-		for (int k = 0; k < 16; k++) {
-			blue[k] = textures.findRegion("blue" + k);
+		for (int k = 1; k < 31; k++) {
+			blue[k] = textures.findRegion("blue" + k + " copy");
 			//yellow[k] = textures.findRegion("yellow" + k);
 		}
 		//textures2 = new TextureAtlas("gameimages2.txt");
@@ -107,10 +107,10 @@ public class GameScreen implements Screen, InputProcessor {
 				if (tile.bit > 0) game.batch.draw(sceneryClouds[(int) tile.bit], tile.x - 20, tile.y - 20 - game.g.height); break;
 			case Default: 
 				game.batch.draw(basic0, tile.x - 21, tile.y - 21 - game.g.height); 
-				if (tile.bit > 0 && tile.bit <= 16) game.batch.draw(blue[(int) (tile.bit - 1)], tile.x - 20, tile.y - 20 - game.g.height); break;
+				if (tile.bit > 0 && tile.bit <= 30) game.batch.draw(blue[(int) (tile.bit)], tile.x - 20, tile.y - 20 - game.g.height); break;
 			case Super: 
 				game.batch.draw(super0, tile.x - 21, tile.y - 21 - game.g.height); 
-				if (tile.bit > 0 && tile.bit <= 16) game.batch.draw(blue[(int) (tile.bit - 1)], tile.x - 20, tile.y - 20 - game.g.height); break;
+				if (tile.bit > 0 && tile.bit <= 30) game.batch.draw(blue[(int) (tile.bit)], tile.x - 20, tile.y - 20 - game.g.height); break;
 			//game.batch.draw(ready, oS(tile.x - 20), tile.y - 20); 
 			//default: game.batch.draw(pauseIcon, tile.x - 20, tile.y - 20 - game.g.height); break;
 			case Removable: break;

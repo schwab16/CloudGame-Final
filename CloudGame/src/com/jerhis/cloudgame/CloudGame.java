@@ -47,7 +47,7 @@ public class CloudGame {
 		controllerOfTiles.updateCollisions(delta, guy);
 		
 		int cloudsRemoved = controllerOfTiles.updateTiles(delta, height);
-		score += (cloudsRemoved)*(cloudsRemoved + 1) * 20; //combos are scored better
+		score += (cloudsRemoved)*(cloudsRemoved + 1) * 25; //combos are scored better
 		controllerOfTiles.spawn(totalTime, height);
 		
 		controllerOfTiles.updateGameObjects(delta);
