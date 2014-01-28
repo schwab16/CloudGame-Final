@@ -21,6 +21,9 @@ public class TileScenery extends Tile {
 
 	@Override
 	public void setNeighborScore(int score) {
+		if (neighborScore > 0 && score == 0) {
+			type = Tile.Type.Removable;
+		}
 		neighborScore = score;
 		bit = neighborScore;
 	}

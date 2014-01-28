@@ -270,7 +270,7 @@ public class GameScreen implements Screen, InputProcessor {
 	@Override
 	public boolean scrolled(int amount) {return false;}
 	
-	enum State {
+	public enum State {
 		Running, Paused, Finished, Ready
 	}
 	

@@ -2,6 +2,7 @@ package com.jerhis.cloudgame.game;
 
 import java.util.ArrayList;
 
+import com.jerhis.cloudgame.GameScreen;
 import com.jerhis.cloudgame.game.Tile.CollisionType;
 import com.jerhis.cloudgame.game.Tile.Type;
 
@@ -273,10 +274,10 @@ public class ControllerOfTiles {
 			//  1
 			// 8X2
 			//  4
-		if (t.aboveTile != null && t.aboveTile.type != Tile.Type.Scenery) score += 1;
-		if (t.belowTile != null && t.belowTile.type != Tile.Type.Scenery) score += 4;
-		if (t.leftTile != null  && t.leftTile.type  != Tile.Type.Scenery) score += 8;
-		if (t.rightTile != null && t.rightTile.type != Tile.Type.Scenery) score += 2;
+		if (t.aboveTile != null && t.aboveTile.type != Tile.Type.Removable && t.aboveTile.type != Tile.Type.Scenery) score += 1;
+		if (t.belowTile != null && t.belowTile.type != Tile.Type.Removable && t.belowTile.type != Tile.Type.Scenery) score += 4;
+		if (t.leftTile != null  && t.leftTile.type != Tile.Type.Removable && t.leftTile.type  != Tile.Type.Scenery) score += 8;
+		if (t.rightTile != null && t.rightTile.type != Tile.Type.Removable && t.rightTile.type != Tile.Type.Scenery) score += 2;
 		t.setNeighborScore(score);
 	}
 	
@@ -406,10 +407,10 @@ public class ControllerOfTiles {
 				{b___,scen,0.3f,1.0f,0.4f,0.4f,1.0f,scen,b___},
 				{b___,b___,scen,scen,scen,scen,scen,b___,b___}};
 		case 9: return new float[][] { //hard *4
-				{b___,b___,b___,b___,b___,b___,b___,b___,b___},
-				{b___,0.1f,0.1f,scen,scen,b___,b___,b___,b___},
-				{b___,0.4f,scen,0.2f,0.1f,scen,b___,b___,b___},
-				{b___,1.0f,1.0f,0.4f,0.4f,0.2f,scen,b___,b___},
+				{b___,scen,scen,b___,b___,b___,b___,b___,b___},
+				{scen,0.1f,0.1f,scen,scen,b___,b___,b___,b___},
+				{scen,0.4f,scen,0.2f,0.1f,scen,b___,b___,b___},
+				{scen,1.0f,1.0f,0.4f,0.4f,0.2f,scen,b___,b___},
 				{b___,scen,1.0f,1.0f,1.0f,0.4f,0.2f,scen,b___},
 				{b___,b___,scen,scen,scen,scen,scen,b___,b___}};
 		case 10: return new float[][] { //easy *0

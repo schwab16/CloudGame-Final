@@ -32,7 +32,7 @@ public class CloudGame {
 		clear();
 	}
 	
-	public GameScreen.State update(float delta) {
+	public GameScreen.State update(float delta) {;
 		totalTime += delta;
 		lastDelta = delta;
 		bgOffSet = ((totalTime * guy.OFFSETSPEED) % 840) - 40;
