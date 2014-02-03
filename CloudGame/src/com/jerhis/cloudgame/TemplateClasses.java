@@ -4,6 +4,36 @@ public class TemplateClasses {
 
 }
 
+/*if (t.arrayY == arrayY + 1) {
+if (t.arrayX == arrayX - 2) t.bit += 8; 
+else if (t.arrayX == arrayX - 1) t.bit += 14; 
+else if (t.arrayX == arrayX + 0) t.bit += 20; 
+else if (t.arrayX == arrayX + 1) t.bit += 14; 
+else if (t.arrayX == arrayX + 2) t.bit += 8; 
+}
+else if (t.arrayY == arrayY) {
+if (t.arrayX == arrayX - 3) t.bit += 8; 
+else if (t.arrayX == arrayX - 2) t.bit += 14; 
+else if (t.arrayX == arrayX - 1) t.bit += 24; 
+else if (t.arrayX == arrayX + 1) t.bit += 24; 
+else if (t.arrayX == arrayX + 2) t.bit += 14; 
+else if (t.arrayX == arrayX + 3) t.bit += 8; 
+}
+else if (t.arrayY == arrayY - 1) {
+if (t.arrayX == arrayX - 2) t.bit += 12; 
+else if (t.arrayX == arrayX - 1) t.bit += 20; 
+else if (t.arrayX == arrayX + 0) t.bit += 30; 
+else if (t.arrayX == arrayX + 1) t.bit += 20; 
+else if (t.arrayX == arrayX + 2) t.bit += 12; 
+}
+else if (t.arrayY == arrayY - 2) {
+if (t.arrayX == arrayX - 1) t.bit += 12;  
+else if (t.arrayX == arrayX + 0) t.bit += 20; 
+else if (t.arrayX == arrayX + 1) t.bit += 12;  
+}
+else if (t.arrayX == arrayX + 0 && t.arrayY == arrayY + 2) t.bit += 14; 
+else if (t.arrayX == arrayX + 0 && t.arrayY == arrayY - 3) t.bit += 10; */
+
 /*private float oS(float x) {
 if (game.g.doOffSet)
 	return ((x + game.g.offSet)%840) - 40;

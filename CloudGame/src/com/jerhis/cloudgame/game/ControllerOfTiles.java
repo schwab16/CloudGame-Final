@@ -67,9 +67,9 @@ public class ControllerOfTiles {
 	}
 	
 	private void hitNeighbors(int arrayX, int arrayY) {
-		/* 
-		 int[][] damageValues = new int[][] {
-		 	{0, 0, 0, 0, 0, 0, 0, 0, 0},
+		
+		int[][] damageValues = new int[][] { //how blue do the neighbor tiles get?
+		 	{0, 0, 0, 0, 0, 0, 0, 0, 0}, 
 		 	{0, 0, 0, 0,14, 0, 0, 0, 0},
 		 	{0, 0, 8,14,20,14, 8, 0, 0},
 		 	{0, 8,14,24, 0,24,14, 8, 0},
@@ -77,44 +77,13 @@ public class ControllerOfTiles {
 		 	{0, 0, 0,12,20,12, 0, 0, 0},
 		 	{0, 0, 0, 0,10, 0, 0, 0, 0},
 		 	{0, 0, 0, 0, 0, 0, 0, 0, 0} };
-		 */
+		
 		for (Tile t: tiles) {
 			if (t instanceof TileScenery) continue;
-			/*
 			int difX = t.arrayX - arrayX + 4;
-			int difX = arrayY - t.arrayY + 3;
+			int difY = arrayY - t.arrayY + 3;
 			if (difX >= 0 && difY >= 0 && difX < 9 && difY < 8)
 				t.bit += damageValues[difY][difX];
-			*/
-			if (t.arrayY == arrayY + 1) {
-				if (t.arrayX == arrayX - 2) t.bit += 8; 
-				else if (t.arrayX == arrayX - 1) t.bit += 14; 
-				else if (t.arrayX == arrayX + 0) t.bit += 20; 
-				else if (t.arrayX == arrayX + 1) t.bit += 14; 
-				else if (t.arrayX == arrayX + 2) t.bit += 8; 
-			}
-			else if (t.arrayY == arrayY) {
-				if (t.arrayX == arrayX - 3) t.bit += 8; 
-				else if (t.arrayX == arrayX - 2) t.bit += 14; 
-				else if (t.arrayX == arrayX - 1) t.bit += 24; 
-				else if (t.arrayX == arrayX + 1) t.bit += 24; 
-				else if (t.arrayX == arrayX + 2) t.bit += 14; 
-				else if (t.arrayX == arrayX + 3) t.bit += 8; 
-			}
-			else if (t.arrayY == arrayY - 1) {
-				if (t.arrayX == arrayX - 2) t.bit += 12; 
-				else if (t.arrayX == arrayX - 1) t.bit += 20; 
-				else if (t.arrayX == arrayX + 0) t.bit += 30; 
-				else if (t.arrayX == arrayX + 1) t.bit += 20; 
-				else if (t.arrayX == arrayX + 2) t.bit += 12; 
-			}
-			else if (t.arrayY == arrayY - 2) {
-				if (t.arrayX == arrayX - 1) t.bit += 12;  
-				else if (t.arrayX == arrayX + 0) t.bit += 20; 
-				else if (t.arrayX == arrayX + 1) t.bit += 12;  
-			}
-			else if (t.arrayX == arrayX + 0 && t.arrayY == arrayY + 2) t.bit += 14; 
-			else if (t.arrayX == arrayX + 0 && t.arrayY == arrayY - 3) t.bit += 10; 
 			if (t.bit > 30) t.type = Type.becomeScenery;
 		}
 	}
@@ -250,7 +219,7 @@ public class ControllerOfTiles {
 			onNeighborUpdate(aboveTile);
 		}
 		if (belowTile != null) {
-			bt.aboveTile = newTile;
+			belowTile.aboveTile = newTile;
 			onNeighborUpdate(belowTile);
 		}
 		newTile.initializeNeighbors(aboveTile, belowTile, rightTile, leftTile);
