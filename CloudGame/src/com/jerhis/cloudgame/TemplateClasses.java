@@ -1,5 +1,9 @@
 package com.jerhis.cloudgame;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
+
 public class TemplateClasses {
 
 }
@@ -291,6 +295,8 @@ public class ExampleScreen implements Screen, InputProcessor {
 	TextureAtlas textures;
 	AtlasRegion extractedTexture;
 	Texture splash;
+	static Sound sound;
+	static Music music;
 	 
 	public GameScreen(final MyGdxGame gam) {
 		game = gam;
@@ -303,6 +309,11 @@ public class ExampleScreen implements Screen, InputProcessor {
 		extractedTexture = textures.findRegion("MyTexture");
 		
 		splash = new Texture(Gdx.files.internal("splash.png"));
+		
+		sound = Gdx.audio.newSound(Gdx.files.internal("sound.mp3"));
+		music = Gdx.audio.newMusic(Gdx.files.internal("music.mp3"));
+		//sound.play();
+		//music.play();
 		
 		int stored = game.prefs.getInteger("best", -1); //stored = -1 if there is nothing stored at "best"
 		game.prefs.putInteger("best", stored);
