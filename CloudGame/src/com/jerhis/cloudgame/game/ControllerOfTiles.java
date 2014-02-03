@@ -67,16 +67,25 @@ public class ControllerOfTiles {
 	}
 	
 	private void hitNeighbors(int arrayX, int arrayY) {
-		/* all plus 2 then x2
-		 * 0 0 0 5 0 0 0
-		 * 0 2 5 8 5 2 0
-		 * 2 5 a x a 5 2
-		 * 0 4 8 f 8 4 0
-		 * 0 0 4 a 4 0 0
-		 * 0 0 0 4 0 0 0
+		/* 
+		 int[][] damageValues = new int[][] {
+		 	{0, 0, 0, 0, 0, 0, 0, 0, 0},
+		 	{0, 0, 0, 0,14, 0, 0, 0, 0},
+		 	{0, 0, 8,14,20,14, 8, 0, 0},
+		 	{0, 8,14,24, 0,24,14, 8, 0},
+		 	{0, 0,12,20,30,20,12, 0, 0},
+		 	{0, 0, 0,12,20,12, 0, 0, 0},
+		 	{0, 0, 0, 0,10, 0, 0, 0, 0},
+		 	{0, 0, 0, 0, 0, 0, 0, 0, 0} };
 		 */
 		for (Tile t: tiles) {
 			if (t instanceof TileScenery) continue;
+			/*
+			int difX = t.arrayX - arrayX + 4;
+			int difX = arrayY - t.arrayY + 3;
+			if (difX >= 0 && difY >= 0 && difX < 9 && difY < 8)
+				t.bit += damageValues[difY][difX];
+			*/
 			if (t.arrayY == arrayY + 1) {
 				if (t.arrayX == arrayX - 2) t.bit += 8; 
 				else if (t.arrayX == arrayX - 1) t.bit += 14; 
