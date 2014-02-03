@@ -208,14 +208,14 @@ public class ControllerOfTiles {
 	private void addTile(int x, int y, int type) {
 		if (type == b___) return;
 		
-		Tile at = null, bt = null, lt = null, rt = null, nt;
+		Tile aboveTile = null, belowTile = null, leftTile = null, rightTile = null, newTile;
 		
 		//make our new tile, nt
 		switch (type) {
-		case scen: nt = new TileScenery(x, y); break;
-		case SUPE: nt = new TileSuper(x, y); break;
+		case scen: newTile = new TileScenery(x, y); break;
+		case SUPE: newTile = new TileSuper(x, y); break;
 		default: case 0: case 1:
-		case regu: nt = new TileBasic(x, y); break;
+		case regu: newTile = new TileBasic(x, y); break;
 		}
 		
 		for (int k = 0; k < tiles.size(); k++) {
@@ -228,34 +228,34 @@ public class ControllerOfTiles {
 				else return;
 			}
 			else if (t.arrayX == x + 1 && t.arrayY == y) 
-				rt = t;
+				rightTile = t;
 			else if (t.arrayX == x - 1 && t.arrayY == y) 
-				lt = t;
+				leftTile = t;
 			else if (t.arrayX == x && t.arrayY == y + 1) 
-				at = t;
+				aboveTile = t;
 			else if (t.arrayX == x && t.arrayY == y - 1) 
-				bt = t;
+				belowTile = t;
 		}
 		
-		if (rt != null) {
-			rt.leftTile = nt;
-			onNeighborUpdate(rt);
+		if (rightTile != null) {
+			rightTile.leftTile = newTile;
+			onNeighborUpdate(rightTile);
 		}
-		if (lt != null) {
-			lt.rightTile = nt;
-			onNeighborUpdate(lt);
+		if (leftTile != null) {
+			leftTile.rightTile = newTile;
+			onNeighborUpdate(leftTile);
 		}
-		if (at != null) {
-			at.belowTile = nt;
-			onNeighborUpdate(at);
+		if (aboveTile != null) {
+			aboveTile.belowTile = newTile;
+			onNeighborUpdate(aboveTile);
 		}
-		if (bt != null) {
-			bt.aboveTile = nt;
-			onNeighborUpdate(bt);
+		if (belowTile != null) {
+			bt.aboveTile = newTile;
+			onNeighborUpdate(belowTile);
 		}
-		nt.initializeNeighbors(at, bt, rt, lt);
-		onNeighborUpdate(nt);
-		tiles.add(nt);
+		newTile.initializeNeighbors(aboveTile, belowTile, rightTile, leftTile);
+		onNeighborUpdate(newTile);
+		tiles.add(newTile);
 	}
 	
 	private void removeTile(Tile t) {
