@@ -2,6 +2,7 @@ package com.jerhis.cloudgame;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.Gdx;
 import com.jerhis.cloudgame.game.*;
 import com.jerhis.cloudgame.game.Tile.CollisionType;
 
@@ -32,14 +33,20 @@ public class CloudGame {
 		clear();
 	}
 	
-	public GameScreen.State update(float delta) {;
+	public GameScreen.State update(float delta) {
+		if (game.tiltControls) 
+			game.accelY = Gdx.input.getAccelerometerY();
+		
 		totalTime += delta;
 		lastDelta = delta;
 		bgOffSet = ((totalTime * guy.OFFSETSPEED) % 840) - 40;
 		bg1 = (int)((totalTime * 2 * 10) % 1600 - 800);
 		bg2 = (int)((bg1 + 1600) % 1600 - 800);
 		
-		guy.update(delta, right, left, height);
+		if (game.tiltControls)
+			guy.update(delta, game.accelX, game.accelY, game.accelZ, height);
+		else 
+			guy.update(delta, right, left, height);
 		int buffer = 300;
 		score = guy.y > height + buffer ? score + guy.y - height - buffer : score;
 		height = guy.y > height + buffer ? guy.y - buffer : height;
@@ -100,9 +107,9 @@ public class CloudGame {
 	
 	public void highScore() {
 		//sets high score to current highscore	
-		if (score > highScore) game.prefs.putInteger(game.fileName + gameType, (int)score);
+		if (score > highScore) game.prefs.putInteger(game.fileNameHighScore + gameType, (int)score);
 		game.prefs.flush();
-		highScore = game.prefs.getInteger(game.fileName + gameType, 0);
+		highScore = game.prefs.getInteger(game.fileNameHighScore + gameType, 0);
 	}
 
 }

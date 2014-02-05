@@ -15,7 +15,7 @@ public class MainMenuScreen implements Screen, InputProcessor {
 	OrthographicCamera camera;
 
 	TextureAtlas textures;
-	AtlasRegion bg;
+	AtlasRegion bg, controlTilt, controlTouch;
 	
 	boolean leaving = false;
  
@@ -28,6 +28,8 @@ public class MainMenuScreen implements Screen, InputProcessor {
 
 		textures = new TextureAtlas("menuimages.txt");
 		bg = textures.findRegion("menubg");
+		controlTilt = textures.findRegion("controltilt");
+		controlTouch = textures.findRegion("controltouch");
 		
 		//highScore = game.prefs.getInteger("best", 0);
 		//game.prefs.putInteger("best", (int)GameDisplay.guy.currentScore);
@@ -44,6 +46,9 @@ public class MainMenuScreen implements Screen, InputProcessor {
 		game.batch.begin();
 		//game.font.draw(game.batch, "Welcome to Drop!!! ", 100, 150);
 		game.batch.draw(bg, 0, 0);
+		if (game.tiltControls)
+			game.batch.draw(controlTilt, 800-240, 0);
+		else game.batch.draw(controlTouch, 800-240, 0);
 		game.batch.end();
 		
 		if (leaving)
@@ -100,7 +105,14 @@ public class MainMenuScreen implements Screen, InputProcessor {
 		camera.unproject(pos);
 		int x = (int) pos.x, y = (int) pos.y;
 		
-		leaving = true;
+		if (x > 800-240 && y < 200 && y > 100) {
+			game.setControls(true);
+		}
+		else if (x > 800-240 && y <= 100) {
+			game.setControls(false);
+		}
+		else if (x < 800-250 || y > 250)
+			leaving = true;
 		
 		return false;
 	}

@@ -4,8 +4,22 @@ filter: Linear,Linear
 repeat: none
 menubg
   rotate: false
-  xy: 2, 2
+  xy: 2, 254
   size: 800, 480
   orig: 800, 480
+  offset: 0, 0
+  index: -1
+controltouch
+  rotate: false
+  xy: 244, 2
+  size: 240, 250
+  orig: 240, 250
+  offset: 0, 0
+  index: -1
+controltilt
+  rotate: false
+  xy: 2, 2
+  size: 240, 250
+  orig: 240, 250
   offset: 0, 0
   index: -1

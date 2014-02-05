@@ -15,7 +15,7 @@ public class GameScreen implements Screen, InputProcessor {
 	final MyGdxGame game;
 	OrthographicCamera camera;
 
-	TextureAtlas textures;//, textures2;
+	TextureAtlas textures, textures2;
 	AtlasRegion bg, ready, finish, pause, pauseIcon, blackOverlay, rain, 
 		basic0, super0, redChaser, sceneryClouds[] = new AtlasRegion[16], 
 		blue[] = new AtlasRegion[31]; //yellow[] = new AtlasRegion[10];
@@ -55,6 +55,7 @@ public class GameScreen implements Screen, InputProcessor {
 		//textures2 = new TextureAtlas("gameimages2.txt");
 		//splash = new Texture(Gdx.files.internal("splash.png"));
 		
+		game.g.clear();
 		state = State.Ready;
 		
 		//highScore = game.prefs.getInteger("best", 0);
@@ -131,7 +132,11 @@ public class GameScreen implements Screen, InputProcessor {
 		
 		game.font.draw(game.batch, "Score: " + (int)game.g.score, 10, 470);
 		game.font.draw(game.batch, "Best: " + game.g.highScore, 10, 440);
-		if (game.debug) game.font.draw(game.batch, "FPS: " + (int)(1/game.g.lastDelta) + " H: " + (int)game.g.height/1000, 10, 410);
+		if (game.debug) { 
+			game.font.draw(game.batch, "FPS: " + (int)(1/game.g.lastDelta) + " H: " + (int)game.g.height/1000, 10, 410);
+			game.font.draw(game.batch, " Y: " + game.accelY, 10, 380);
+		}
+					
 		
 		switch (state) {
 		case Running:

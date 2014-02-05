@@ -24,6 +24,11 @@ public class TemplateClasses {
  * 
  */
 
+//boolean available = Gdx.input.isPeripheralAvailable(Peripheral.Accelerometer);
+// float accelX = Gdx.input.getAccelerometerX();
+//float accelY = Gdx.input.getAccelerometerY();
+//float accelZ = Gdx.input.getAccelerometerZ();
+
 /*if (t.arrayY == arrayY + 1) {
 if (t.arrayX == arrayX - 2) t.bit += 8; 
 else if (t.arrayX == arrayX - 1) t.bit += 14; 
