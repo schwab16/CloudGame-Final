@@ -8,6 +8,22 @@ public class TemplateClasses {
 
 }
 
+/** TODO:
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
 /*if (t.arrayY == arrayY + 1) {
 if (t.arrayX == arrayX - 2) t.bit += 8; 
 else if (t.arrayX == arrayX - 1) t.bit += 14; 
